@@ -7,7 +7,7 @@ export const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ];
 
-export const heroTrustBadges = ['12,000+ Students Guided', '100+ Colleges', '4.9 Rating'];
+export const heroTrustBadges = ['12,000+ Students Guided', '100+ Colleges Covered', '4.9 Rating'];
 
 export const heroProfilePoints = [
   'Rank 80k - 3 lakh',
@@ -47,14 +47,19 @@ export const pillars = [
     icon: Users2,
   },
   {
-    title: 'Real Outcomes',
+    title: 'Real Placement Truth',
     description: 'Understand placements, branch reality, culture, opportunities, and what actually happens after joining.',
     icon: ShieldCheck,
   },
   {
-    title: 'Real Clarity',
+    title: 'Better Rank Decisions',
     description: 'Get guidance based on your rank, budget, goals, and what fits your next 4 years.',
     icon: Sparkles,
+  },
+  {
+    title: 'Parent-Friendly Guidance',
+    description: 'Make decisions your parents can trust because they are practical, clear, and future-safe.',
+    icon: School2,
   },
 ];
 

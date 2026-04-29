@@ -12,14 +12,14 @@ export default function Hero() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/75 backdrop-blur">
             <Sparkles className="h-4 w-4 text-[#FF6B2B]" />
-            Built for students confused after boards, JEE, NEET and commerce results
+            Built for students confused after boards, JEE, NEET, and commerce results
           </div>
           <h1 className="max-w-2xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Confused After 12th?
-            <span className="block text-[#FFB38E]">Don’t Take a Wrong College Decision.</span>
+            <span className="block text-[#FFB38E]">Don’t Risk a Wrong 4-Year Decision.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-white/72 sm:text-lg">
-            Talk to seniors who already lived your path. Get clarity on college, branch, placements & future growth before you commit to four years.
+            JEE / NEET / Commerce students use Atyant to choose better colleges, better branches, and better futures.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
