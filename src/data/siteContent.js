@@ -143,7 +143,7 @@ export const freeGroupBullets = [
 
 export const footerLinks = [
   { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'WhatsApp', href: '#contact' },
+  { label: 'WhatsApp', href: 'https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t' },
   { label: 'Contact', href: 'mailto:hello@atyant.in' },
   { label: 'Privacy Policy', href: '#' },
 ];

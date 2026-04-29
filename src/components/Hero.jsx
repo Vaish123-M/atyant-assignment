@@ -23,7 +23,9 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#pricing"
+              href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-6 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]"
             >
               Get Clarity on WhatsApp

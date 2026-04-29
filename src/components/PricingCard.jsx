@@ -38,7 +38,9 @@ export default function PricingCard({ title, price, features, cta, highlighted =
         ))}
       </div>
       <a
-        href="#contact"
+        href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t"
+        target="_blank"
+        rel="noopener noreferrer"
         className={`mt-7 inline-flex w-full items-center justify-center rounded-full px-5 py-4 text-sm font-semibold transition hover:scale-[1.02] ${
           highlighted ? 'bg-[#FF6B2B] text-white hover:bg-[#ff7a42]' : 'bg-[#0B0F2E] text-white hover:bg-[#12183f]'
         }`}
