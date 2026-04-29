@@ -9,4 +9,11 @@ html {
 body {
   margin: 0;
   background: #ffffff;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }

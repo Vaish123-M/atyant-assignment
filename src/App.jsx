@@ -85,7 +85,7 @@ function PricingSection() {
           <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0B0F2E] sm:text-4xl">Pick the clarity you actually need.</h2>
           <p className="mt-4 text-base leading-8 text-slate-600">Simple plans. Easy to understand. Built to help students and parents make the right decision faster.</p>
         </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {pricingPlans.map((plan) => (
             <PricingCard key={plan.title} {...plan} />
           ))}
@@ -212,7 +212,7 @@ function FinalCTA() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased">
+    <div className="min-h-screen overflow-x-hidden bg-white font-sans antialiased">
       <Navbar />
       <main>
         <Hero />
