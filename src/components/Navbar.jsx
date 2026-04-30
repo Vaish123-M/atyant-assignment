@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const journeyTabs = [
   { id: 'after12th', label: 'After 12th 🔥' },
@@ -23,48 +22,44 @@ export default function Navbar({ activeTab, onTabChange, onLeadClick }) {
         </a>
 
         <div className="hidden min-w-0 flex-1 items-center justify-center gap-3 lg:flex">
-          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-white/45">I'm in</span>
           <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 p-1 shadow-[0_12px_30px_rgba(0,0,0,0.18)] backdrop-blur">
             {journeyTabs.map((tab) => (
-              <motion.button
+              <button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id)}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition relative z-10 ${
+                className={`rounded-full px-5 py-2.5 text-sm font-semibold relative z-10 ${
                   activeTab === tab.id
-                    ? 'bg-[#FF6B2B] text-white shadow-lg shadow-[#FF6B2B]/25'
-                    : 'text-white/68 hover:text-white hover:bg-[#FF6B2B]/12'
+                    ? 'bg-[#FF6B2B] text-white'
+                    : 'bg-white/8 text-white'
                 }`}
               >
                 {tab.label}
-              </motion.button>
+              </button>
             ))}
           </div>
         </div>
 
         <button
           onClick={onLeadClick}
-          className="ml-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#FF6B2B] px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]"
+          className="ml-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#FF6B2B] px-3 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-[#FF6B2B]/25"
         >
           Get Clarity
         </button>
       </div>
 
-      <div className="border-t border-white/10 bg-[#0B0F2E]/96 px-4 py-3 backdrop-blur lg:hidden">
-        <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.26em] text-white/42">I'm in</div>
-          <div className="flex gap-2 overflow-x-auto pb-1">
+      <div className="border-t border-white/10 bg-[#0B0F2E]/96 px-3 py-3 backdrop-blur lg:hidden">
+        <div className="grid grid-cols-4 gap-2">
           {journeyTabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold transition relative z-10 ${
+              className={`min-h-[52px] rounded-2xl px-1 py-2 text-center text-[9px] font-semibold leading-tight relative z-10 sm:text-[10px] ${
                 activeTab === tab.id
-                  ? 'bg-[#FF6B2B] text-white shadow-lg shadow-[#FF6B2B]/25'
-                  : 'bg-white/5 text-white/70 hover:bg-[#FF6B2B]/12 hover:text-white'
+                  ? 'bg-[#FF6B2B] text-white'
+                  : 'bg-white/5 text-white'
               }`}
             >
-              {tab.label}
+              <span className="block whitespace-normal break-words">{tab.label}</span>
             </button>
           ))}
         </div>
