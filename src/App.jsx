@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import JourneySelector from './components/JourneySelector';
 import LeadCaptureModal from './components/LeadCaptureModal';
 import ChatWidget from './components/ChatWidget';
 import AdminPanel from './components/AdminPanel';
@@ -35,13 +34,6 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans antialiased">
       <Navbar activeTab={activeTab} onTabChange={setActiveTab} onLeadClick={() => setShowLeadModal(true)} />
-      <JourneySelector activeStage={activeTab} onStageChange={setActiveTab} />
-
-        <div className="fixed top-0 left-0 right-0 z-50">
-          <div className="mx-auto max-w-7xl">
-            <div className="hidden" />
-          </div>
-        </div>
 
       <AnimatePresence mode="wait">
         <motion.div
