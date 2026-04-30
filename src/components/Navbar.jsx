@@ -12,7 +12,7 @@ export default function Navbar({ activeTab, onTabChange, onLeadClick }) {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0B0F2E]/88 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 sm:gap-3 text-white">
+        <a href="#top" className="flex items-center gap-2 sm:gap-3 text-white">
           <div className="flex h-10 sm:h-11 w-10 sm:w-11 items-center justify-center flex-shrink-0 rounded-2xl bg-gradient-to-br from-[#FF6B2B] to-[#ff8a57] shadow-lg shadow-[#FF6B2B]/30">
             <span className="text-xs sm:text-sm font-black tracking-[0.3em]">A</span>
           </div>
