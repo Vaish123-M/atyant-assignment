@@ -67,6 +67,8 @@ export default function FinalYearPage() {
       <DecisionEngine />
       <RegretSection />
       <AtyantFramework />
+
+      <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">Placement Toolkit</div>
