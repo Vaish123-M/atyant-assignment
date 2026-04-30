@@ -14,8 +14,8 @@ export default function Footer({ onAdminClick }) {
         </div>
           <div className="flex flex-wrap gap-5 items-center text-sm">
             {footerLinks.map((link) => (
-              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} className="text-white transition hover:opacity-80">
-                {link.label}
+              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} title={link.title} className="text-white transition hover:opacity-80">
+                {link.label === 'Contact' ? (link.title || link.label) : link.label}
               </a>
             ))}
             <button onClick={onAdminClick} className="ml-2 text-xs text-white hover:opacity-80 transition">Admin</button>
