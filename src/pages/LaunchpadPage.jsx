@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import JourneyTabs from '../components/JourneyTabs';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
 import DecisionTool from '../components/DecisionTool';
@@ -267,6 +268,7 @@ function FinalCTA() {
 export default function LaunchpadPage({ activeTab, onTabChange }) {
   return (
     <main>
+      <JourneyTabs activeTab={activeTab} onTabChange={onTabChange} />
       <Hero activeTab={activeTab} onTabChange={onTabChange} />
       <DecisionTool />
       <TrustMetrics />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChartColumn, Network, RefreshCw, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
+import JourneyTabs from '../components/JourneyTabs';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
 
@@ -20,6 +21,7 @@ const cards = [
 export default function WorkingProPage({ activeTab, onTabChange }) {
   return (
     <main>
+      <JourneyTabs activeTab={activeTab} onTabChange={onTabChange} />
       <motion.section
         id="top"
         className="relative overflow-hidden bg-[#0B0F2E] text-white"
