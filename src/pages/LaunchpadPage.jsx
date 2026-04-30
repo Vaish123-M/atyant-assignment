@@ -180,34 +180,34 @@ function FreeGroupSection() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="rounded-[1.6rem] border p-6 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] flex flex-col h-full">
+            <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="rounded-[1.6rem] border p-8 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] flex flex-col h-full">
               <div>
-                <h3 className="text-2xl font-black text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
-                <p className="mt-2 text-sm text-slate-600">Practical, evidence-backed guidance that parents can rely on.</p>
+                <h3 className="text-4xl font-black text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
+                <p className="mt-3 text-base text-slate-600 font-medium">Practical, evidence-backed guidance that parents can rely on.</p>
               </div>
               
-              <div className="mt-6 space-y-4 flex-1">
+              <div className="mt-8 space-y-6 flex-1">
                 <motion.div whileHover={{ x: 6 }} className="flex items-start gap-4">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
+                  <div className="mt-1 h-3 w-3 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
                   <div>
-                    <p className="font-semibold text-slate-700">100% Honest Feedback</p>
-                    <p className="text-xs text-slate-500 mt-1">No sugar-coating. Real insights from real seniors.</p>
+                    <p className="text-lg font-bold text-slate-800">100% Honest Feedback</p>
+                    <p className="text-sm text-slate-600 mt-2">No sugar-coating. Real insights from real seniors.</p>
                   </div>
                 </motion.div>
                 
                 <motion.div whileHover={{ x: 6 }} className="flex items-start gap-4">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
+                  <div className="mt-1 h-3 w-3 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
                   <div>
-                    <p className="font-semibold text-slate-700">Data-Backed Placement Truth</p>
-                    <p className="text-xs text-slate-500 mt-1">College outcomes verified from 100+ colleges.</p>
+                    <p className="text-lg font-bold text-slate-800">Data-Backed Placement Truth</p>
+                    <p className="text-sm text-slate-600 mt-2">College outcomes verified from 100+ colleges.</p>
                   </div>
                 </motion.div>
                 
                 <motion.div whileHover={{ x: 6 }} className="flex items-start gap-4">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
+                  <div className="mt-1 h-3 w-3 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
                   <div>
-                    <p className="font-semibold text-slate-700">Personalized For Your Kid</p>
-                    <p className="text-xs text-slate-500 mt-1">Not generic advice. Your situation matters.</p>
+                    <p className="text-lg font-bold text-slate-800">Personalized For Your Kid</p>
+                    <p className="text-sm text-slate-600 mt-2">Not generic advice. Your situation matters.</p>
                   </div>
                 </motion.div>
               </div>
