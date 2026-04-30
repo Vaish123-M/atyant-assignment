@@ -14,11 +14,11 @@ export default function Footer({ onAdminClick }) {
         </div>
           <div className="flex flex-wrap gap-5 items-center text-sm">
             {footerLinks.map((link) => (
-              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} className="transition hover:text-white">
+              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} className="text-white transition hover:opacity-80">
                 {link.label}
               </a>
             ))}
-            <button onClick={onAdminClick} className="ml-2 text-xs text-white/60 hover:text-white">Admin</button>
+            <button onClick={onAdminClick} className="ml-2 text-xs text-white hover:opacity-80 transition">Admin</button>
           </div>
         </div>
       </footer>
