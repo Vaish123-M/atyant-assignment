@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function ParentTrustSection() {
   const points = [
@@ -17,11 +18,11 @@ export default function ParentTrustSection() {
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-4">
-          {points.map((p) => (
-            <div key={p} className="rounded-lg border p-6 text-center">
-              <div className="text-xl font-bold text-[#FF6B2B]">✓</div>
-              <div className="mt-3 font-semibold">{p}</div>
-            </div>
+          {points.map((p, i) => (
+            <motion.div whileHover={{ y: -8 }} key={p} className="rounded-xl border p-6 text-center bg-gradient-to-br from-white to-white/80">
+              <div className="text-2xl font-bold text-[#FF6B2B]">{i === 0 ? '✓' : ''}</div>
+              <div className="mt-3 font-semibold text-[#0B0F2E]">{p}</div>
+            </motion.div>
           ))}
         </div>
       </div>

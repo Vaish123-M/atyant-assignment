@@ -146,57 +146,62 @@ function HowItWorksSection() {
 function FreeGroupSection() {
   return (
     <>
-      <motion.section className="bg-white px-4 py-8 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <div className="mx-auto flex max-w-7xl items-center justify-center rounded-full border border-[#FF6B2B]/30 bg-[#FF6B2B]/5 px-6 py-3 sm:py-4">
-          <div className="animate-pulse pr-2 text-xl">🔥</div>
-          <p className="text-center text-sm font-semibold text-[#FF6B2B] sm:text-base">
-            Early bird advantage: Join now for personalized college matching
-          </p>
-        </div>
+      <motion.section className="px-4 py-6 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <motion.div initial={{ y: -8, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl">
+            <motion.div whileHover={{ scale: 1.02 }} className="mx-auto rounded-full bg-gradient-to-r from-[#FFDBCB] via-[#FFE6D6] to-[#FFF4EF] px-5 py-3 shadow-lg flex items-center justify-center gap-3 border border-white/20">
+              <div className="animate-pulse text-xl">🔥</div>
+              <p className="text-center text-sm font-semibold text-[#FF6B2B] sm:text-base">Early bird advantage: Join now for personalized college matching</p>
+            </motion.div>
+          </div>
+        </motion.div>
       </motion.section>
 
-      <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <div className="mx-auto max-w-7xl space-y-12">
-          <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#0B0F2E,#12193d_55%,#1b2459)] px-6 py-8 shadow-[0_30px_90px_rgba(11,15,46,0.18)] sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
+      <motion.section className="bg-[#f6f7fb] px-4 py-12 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <motion.div initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="overflow-hidden rounded-[1.6rem] bg-gradient-to-br from-[#0B122B] to-[#12183a] px-6 py-8 shadow-[0_40px_120px_rgba(11,15,46,0.16)] sm:px-10 sm:py-10">
               <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FFC900]">Free Community</div>
               <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Join 12,000+ Students in Our Community</h2>
-              <p className="mt-4 text-base leading-8 text-white">Get college updates, cutoff alerts, mistakes to avoid, and real senior Q&A — all in our exclusive WhatsApp group.</p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <p className="mt-4 text-base leading-7 text-white/80">Get college updates, cutoff alerts, mistakes to avoid, and real senior Q&A — all in our exclusive group.</p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {freeGroupBullets.map((bullet) => (
-                  <span key={bullet} className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white">
-                    ✓ {bullet}
-                  </span>
+                  <motion.div key={bullet} whileHover={{ x: 6 }} className="flex items-center gap-3 rounded-xl bg-white/6 px-4 py-3">
+                    <div className="h-7 w-7 flex items-center justify-center rounded-full bg-[#FF6B2B] text-white font-bold">✓</div>
+                    <div className="text-sm text-white">{bullet}</div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-            <div className="mt-8 lg:mt-0">
-              <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-6 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]">
-                Join Free Group
-              </a>
-            </div>
-          </div>
 
-          <motion.div whileHover={{ y: -8 }} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:p-12">
-            <h3 className="text-2xl font-bold text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              <div>
-                <div className="text-3xl font-black text-[#FF6B2B]">100%</div>
-                <p className="mt-2 text-sm font-semibold text-slate-600">Honest Feedback</p>
-                <p className="mt-1 text-xs text-slate-500">No sugar-coating. Real insights from real seniors.</p>
+              <div className="mt-6">
+                <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-full bg-gradient-to-br from-[#FF6B2B] to-[#ff8a57] px-6 py-3 text-sm font-semibold text-white shadow-2xl transition hover:scale-[1.03]">
+                  Join Free Group
+                </a>
               </div>
-              <div>
-                <div className="text-3xl font-black text-[#FF6B2B]">Data-Backed</div>
-                <p className="mt-2 text-sm font-semibold text-slate-600">Placement Truth</p>
-                <p className="mt-1 text-xs text-slate-500">College outcomes verified from 100+ colleges.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="rounded-[1.6rem] border p-6 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
+              <h3 className="text-2xl font-black text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                <motion.div whileHover={{ y: -6 }} className="rounded-lg p-4 text-center bg-gradient-to-br from-white to-white/70">
+                  <div className="text-3xl font-black text-[#FF6B2B]">100%</div>
+                  <p className="mt-2 text-sm font-semibold text-slate-700">Honest Feedback</p>
+                  <p className="mt-1 text-xs text-slate-500">No sugar-coating. Real insights from real seniors.</p>
+                </motion.div>
+                <motion.div whileHover={{ y: -6 }} className="rounded-lg p-4 text-center bg-gradient-to-br from-white to-white/70">
+                  <div className="text-3xl font-black text-[#FF6B2B]">Data-Backed</div>
+                  <p className="mt-2 text-sm font-semibold text-slate-700">Placement Truth</p>
+                  <p className="mt-1 text-xs text-slate-500">College outcomes verified from 100+ colleges.</p>
+                </motion.div>
+                <motion.div whileHover={{ y: -6 }} className="rounded-lg p-4 text-center bg-gradient-to-br from-white to-white/70">
+                  <div className="text-3xl font-black text-[#FF6B2B]">Personalized</div>
+                  <p className="mt-2 text-sm font-semibold text-slate-700">For Your Kid</p>
+                  <p className="mt-1 text-xs text-slate-500">Not generic advice. Your situation matters.</p>
+                </motion.div>
               </div>
-              <div>
-                <div className="text-3xl font-black text-[#FF6B2B]">Personalized</div>
-                <p className="mt-2 text-sm font-semibold text-slate-600">For Your Kid</p>
-                <p className="mt-1 text-xs text-slate-500">Not generic advice. Your situation matters.</p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </motion.section>
     </>
