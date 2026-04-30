@@ -1,28 +1,32 @@
 import { Clock3, GraduationCap, HeartHandshake, School2, ShieldCheck, Sparkles, Users2 } from 'lucide-react';
 
-export const navLinks = [
+const _override = (() => {
+  try { return JSON.parse(localStorage.getItem('siteContentOverride') || 'null'); } catch { return null; }
+})();
+
+export const navLinks = _override?.navLinks ?? [
   { label: 'How it Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Success Stories', href: '#stories' },
   { label: 'FAQ', href: '#faq' },
 ];
 
-export const heroTrustBadges = ['12,000+ Students Guided', '100+ Colleges Covered', '4.9 Rating'];
+export const heroTrustBadges = _override?.heroTrustBadges ?? ['12,000+ Students Guided', '100+ Colleges Covered', '4.9 Rating'];
 
-export const heroProfilePoints = [
+export const heroProfilePoints = _override?.heroProfilePoints ?? [
   'Rank 80k - 3 lakh',
   'Tier 2 / Tier 3 city',
   'Parent-influenced decision',
 ];
 
-export const heroDecisionRows = [
+export const heroDecisionRows = _override?.heroDecisionRows ?? [
   { label: 'College fit', value: 'Strong match' },
   { label: 'Branch pressure', value: 'Resolved' },
   { label: 'Placement outlook', value: 'Clear' },
   { label: 'Regret risk', value: 'Reduced' },
 ];
 
-export const painPoints = [
+export const painPoints = _override?.painPoints ?? [
   {
     title: 'Choose college blindly after rank',
     icon: GraduationCap,
@@ -63,7 +67,7 @@ export const pillars = [
   },
 ];
 
-export const pricingPlans = [
+export const pricingPlans = _override?.pricingPlans ?? [
   {
     title: 'Better College',
     price: '149',
@@ -95,7 +99,7 @@ export const pricingPlans = [
   },
 ];
 
-export const testimonials = [
+export const testimonials = _override?.testimonials ?? [
   {
     name: 'Rohan, Pune',
     quote: 'Saved me from taking wrong private college.',
@@ -110,7 +114,7 @@ export const testimonials = [
   },
 ];
 
-export const faqItems = [
+export const faqItems = _override?.faqItems ?? [
   {
     question: 'Is this mentorship?',
     answer: 'No. ATYANT is a decision clarity service built to help students choose a better college, branch, and path after results.',
@@ -133,20 +137,20 @@ export const faqItems = [
   },
 ];
 
-export const howItWorksSteps = [
+export const howItWorksSteps = _override?.howItWorksSteps ?? [
   { step: '1', title: 'Choose Plan', text: 'Pick the guidance level that fits your confusion.' },
   { step: '2', title: 'Connect on WhatsApp', text: 'We reach out and start the decision conversation.' },
   { step: '3', title: 'Get Clear Decision', text: 'Leave with a practical path and confidence.' },
 ];
 
-export const freeGroupBullets = [
+export const freeGroupBullets = _override?.freeGroupBullets ?? [
   'College updates',
   'Cutoff alerts',
   'Mistakes to avoid',
   'Senior Q&A',
 ];
 
-export const footerLinks = [
+export const footerLinks = _override?.footerLinks ?? [
   { label: 'Instagram', href: 'https://instagram.com' },
   { label: 'WhatsApp', href: 'https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t' },
   { label: 'Contact', href: 'mailto:hello@atyant.in' },

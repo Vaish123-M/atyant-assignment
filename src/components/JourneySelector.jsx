@@ -39,7 +39,7 @@ export default function JourneySelector({ activeStage, onStageChange }) {
               className={`relative rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ${
                 activeStage === stage.id
                   ? 'bg-gradient-to-r from-[#FF6B2B] to-[#ff8a57] text-white shadow-lg shadow-[#FF6B2B]/40'
-                  : 'border border-white/20 bg-white/8 text-white hover:border-white/40 hover:bg-white/12'
+                  : 'border border-white/20 bg-white/8 text-white hover:border-white/40 hover:bg-[#FF6B2B]/12 hover:text-white'
               }`}
             >
               {activeStage === stage.id && (
