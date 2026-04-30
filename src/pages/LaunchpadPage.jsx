@@ -6,7 +6,6 @@ import RegretSection from '../components/RegretSection';
 import DecisionTool from '../components/DecisionTool';
 import WhatNobody from '../components/WhatNobody';
 import ComparisonSection from '../components/ComparisonSection';
-import ParentTrustSection from '../components/ParentTrustSection';
 import AtyantFramework from '../components/AtyantFramework';
 import TrustMetrics from '../components/TrustMetrics';
 import PricingCard from '../components/PricingCard';
@@ -262,7 +261,6 @@ export default function LaunchpadPage() {
       <DecisionEngine />
       <WhatNobody />
       <ComparisonSection />
-      <ParentTrustSection />
       <AtyantFramework />
       <RegretSection />
       <PainSection />
