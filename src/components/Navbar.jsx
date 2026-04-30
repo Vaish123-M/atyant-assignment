@@ -30,7 +30,7 @@ export default function Navbar({ activeTab, onTabChange, onLeadClick }) {
                 className={`rounded-full px-5 py-2.5 text-sm font-semibold relative z-10 ${
                   activeTab === tab.id
                     ? 'bg-[#FF6B2B] text-white'
-                    : 'bg-white/8 text-white'
+                    : 'bg-white/20 text-white border border-white/30'
                 }`}
               >
                 {tab.label}
@@ -56,7 +56,7 @@ export default function Navbar({ activeTab, onTabChange, onLeadClick }) {
               className={`min-h-[52px] rounded-2xl px-1 py-2 text-center text-[9px] font-semibold leading-tight relative z-10 sm:text-[10px] ${
                 activeTab === tab.id
                   ? 'bg-[#FF6B2B] text-white'
-                  : 'bg-white/5 text-white'
+                  : 'bg-white/20 text-white border border-white/30'
               }`}
             >
               <span className="block whitespace-normal break-words">{tab.label}</span>
