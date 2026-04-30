@@ -225,7 +225,7 @@ function FAQSection() {
   return (
     <motion.section id="faq" className="bg-white px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-2xl">
+        <div className="w-full">
           <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">Questions?</div>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0B0F2E] sm:text-4xl">Common questions from students and parents.</h2>
         </div>
