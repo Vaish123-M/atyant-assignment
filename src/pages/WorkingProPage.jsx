@@ -17,7 +17,7 @@ const cards = [
   { title: 'Networking', icon: Network, text: 'Build stronger relationships that create opportunities.' },
 ];
 
-export default function WorkingProPage() {
+export default function WorkingProPage({ activeTab, onTabChange }) {
   return (
     <main>
       <motion.section

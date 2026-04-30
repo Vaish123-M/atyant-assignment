@@ -17,7 +17,7 @@ const cards = [
   { title: 'Referral Guidance', icon: Send, text: 'Learn how to ask for help and get noticed.' },
 ];
 
-export default function FinalYearPage() {
+export default function FinalYearPage({ activeTab, onTabChange }) {
   return (
     <main>
       <motion.section

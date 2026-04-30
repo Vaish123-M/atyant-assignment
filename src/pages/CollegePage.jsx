@@ -17,7 +17,7 @@ const cards = [
   { title: 'Skill Growth', icon: Rocket, text: 'Grow with projects, habits, and smart upskilling.' },
 ];
 
-export default function CollegePage() {
+export default function CollegePage({ activeTab, onTabChange }) {
   return (
     <main>
       <motion.section

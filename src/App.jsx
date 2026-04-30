@@ -25,15 +25,15 @@ export default function App() {
   }, []);
 
   const pageByTab = {
-    after12th: <LaunchpadPage />,
-    college: <CollegePage />,
-    finalyear: <FinalYearPage />,
-    workingpro: <WorkingProPage />,
+    after12th: <LaunchpadPage activeTab={activeTab} onTabChange={setActiveTab} />,
+    college: <CollegePage activeTab={activeTab} onTabChange={setActiveTab} />,
+    finalyear: <FinalYearPage activeTab={activeTab} onTabChange={setActiveTab} />,
+    workingpro: <WorkingProPage activeTab={activeTab} onTabChange={setActiveTab} />,
   };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans antialiased">
-      <Navbar activeTab={activeTab} onTabChange={setActiveTab} onLeadClick={() => setShowLeadModal(true)} />
+      <Navbar onLeadClick={() => setShowLeadModal(true)} />
 
       <AnimatePresence mode="wait">
         <motion.div

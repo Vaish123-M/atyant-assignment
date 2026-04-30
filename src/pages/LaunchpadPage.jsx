@@ -264,10 +264,10 @@ function FinalCTA() {
   );
 }
 
-export default function LaunchpadPage() {
+export default function LaunchpadPage({ activeTab, onTabChange }) {
   return (
     <main>
-      <Hero />
+      <Hero activeTab={activeTab} onTabChange={onTabChange} />
       <DecisionTool />
       <TrustMetrics />
       <DecisionEngine />
