@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
-import AtyantFramework from '../components/AtyantFramework';
 import PricingCard from '../components/PricingCard';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
@@ -249,7 +248,6 @@ export default function LaunchpadPage() {
       <Hero />
       <DecisionEngine />
       <RegretSection />
-      <AtyantFramework />
       <PainSection />
       <SolutionSection />
       <PricingSection />

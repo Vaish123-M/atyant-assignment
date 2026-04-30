@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { BookOpen, FileSearch, MessagesSquare, Mic, Send, Trophy } from 'lucide-react';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
-import AtyantFramework from '../components/AtyantFramework';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 28 },
