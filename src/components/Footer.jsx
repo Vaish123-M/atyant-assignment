@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { footerLinks } from '../data/siteContent';
 import TrustBadges from './TrustBadges';
 
 export default function Footer({ onAdminClick }) {
+  const [showContactInfo, setShowContactInfo] = useState(false);
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setShowContactInfo(true);
+  };
+
   return (
     <>
       <TrustBadges />
@@ -14,14 +21,53 @@ export default function Footer({ onAdminClick }) {
         </div>
           <div className="flex flex-wrap gap-5 items-center text-sm">
             {footerLinks.map((link) => (
-              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} title={link.title} className="text-white transition hover:opacity-80">
-                {link.label === 'Contact' ? (link.title || link.label) : link.label}
-              </a>
+              link.label === 'Contact' ? (
+                <button
+                  key={link.label}
+                  onClick={handleContactClick}
+                  className="text-white transition hover:opacity-80 cursor-pointer"
+                  title={link.title}
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} className="text-white transition hover:opacity-80">
+                  {link.label}
+                </a>
+              )
             ))}
             <button onClick={onAdminClick} className="ml-2 text-xs text-white hover:opacity-80 transition">Admin</button>
           </div>
         </div>
       </footer>
+
+      {showContactInfo && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={() => setShowContactInfo(false)}>
+          <div className="bg-[#09102b] border border-white/20 rounded-lg p-6 max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
+            <h3 className="text-white font-semibold text-lg mb-4">Contact Information</h3>
+            <div className="text-white/80 space-y-3">
+              <p className="text-base">{footerLinks.find(l => l.label === 'Contact')?.title}</p>
+              <div className="flex gap-2 pt-2">
+                <a href="tel:+916262855885" className="flex-1 bg-[#FF6B2B] text-white py-2 px-3 rounded text-center text-sm hover:bg-[#FF6B2B]/90 transition">
+                  Call
+                </a>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText('+916262855885');
+                    setShowContactInfo(false);
+                  }}
+                  className="flex-1 bg-white/10 text-white py-2 px-3 rounded text-center text-sm hover:bg-white/20 transition"
+                >
+                  Copy Number
+                </button>
+              </div>
+            </div>
+            <button onClick={() => setShowContactInfo(false)} className="mt-4 w-full text-white/60 hover:text-white transition text-sm">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

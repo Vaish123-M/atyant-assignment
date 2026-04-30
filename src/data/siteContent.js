@@ -153,6 +153,6 @@ export const freeGroupBullets = _override?.freeGroupBullets ?? [
 export const footerLinks = _override?.footerLinks ?? [
   { label: 'Instagram', href: 'https://instagram.com' },
   { label: 'WhatsApp', href: 'https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t', title: 'All of you can join Atyant community' },
-  { label: 'Contact', href: 'tel:+916262855885', title: 'Aryan Patidar - 62628 55885' },
+  { label: 'Contact', href: '#', title: 'Aryan Patidar - 62628 55885' },
   { label: 'Privacy Policy', href: '#' },
 ];
