@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, FileText, Rocket, Target, Users, ArrowRight } from 'lucide-react';
+import DecisionEngine from '../components/DecisionEngine';
+import RegretSection from '../components/RegretSection';
+import AtyantFramework from '../components/AtyantFramework';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 28 },
@@ -75,6 +78,10 @@ export default function CollegePage() {
           </div>
         </div>
       </motion.section>
+
+      <DecisionEngine />
+      <RegretSection />
+      <AtyantFramework />
 
       <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto max-w-7xl">

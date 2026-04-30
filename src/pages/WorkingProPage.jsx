@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChartColumn, Network, RefreshCw, ShieldCheck, Sparkles, TrendingUp } from 'lucide-react';
+import DecisionEngine from '../components/DecisionEngine';
+import RegretSection from '../components/RegretSection';
+import AtyantFramework from '../components/AtyantFramework';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 28 },
@@ -61,7 +64,9 @@ export default function WorkingProPage() {
         </div>
       </motion.section>
 
-      <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      <DecisionEngine />
+      <RegretSection />
+      <AtyantFramework />
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">Career Growth Stack</div>

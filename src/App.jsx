@@ -2,6 +2,8 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import JourneySelector from './components/JourneySelector';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import LaunchpadPage from './pages/LaunchpadPage';
 import CollegePage from './pages/CollegePage';
 import FinalYearPage from './pages/FinalYearPage';
@@ -20,6 +22,7 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans antialiased">
       <Navbar activeTab={activeTab} onTabChange={setActiveTab} />
+      <JourneySelector activeStage={activeTab} onStageChange={setActiveTab} />
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -34,6 +37,7 @@ export default function App() {
       </AnimatePresence>
 
       <Footer />
+      <WhatsAppFloatingButton />
     </div>
   );
 }

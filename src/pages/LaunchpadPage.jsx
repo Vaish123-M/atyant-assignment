@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import DecisionEngine from '../components/DecisionEngine';
+import RegretSection from '../components/RegretSection';
+import AtyantFramework from '../components/AtyantFramework';
 import PricingCard from '../components/PricingCard';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
@@ -137,29 +140,61 @@ function HowItWorksSection() {
 
 function FreeGroupSection() {
   return (
-    <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-      <div className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#0B0F2E,#12193d_55%,#1b2459)] px-6 py-8 shadow-[0_30px_90px_rgba(11,15,46,0.18)] sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between">
-          <div className="max-w-2xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FFC900]">Free Community</div>
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Join 12,000+ Students in Our Community</h2>
-            <p className="mt-4 text-base leading-8 text-white">Get college updates, cutoff alerts, mistakes to avoid, and real senior Q&A — all in our exclusive WhatsApp group.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {freeGroupBullets.map((bullet) => (
-                <span key={bullet} className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white">
-                  ✓ {bullet}
-                </span>
-              ))}
+    <>
+      <motion.section className="bg-white px-4 py-8 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <div className="mx-auto flex max-w-7xl items-center justify-center rounded-full border border-[#FF6B2B]/30 bg-[#FF6B2B]/5 px-6 py-3 sm:py-4">
+          <div className="animate-pulse pr-2 text-xl">🔥</div>
+          <p className="text-center text-sm font-semibold text-[#FF6B2B] sm:text-base">
+            Early bird advantage: Join now for personalized college matching
+          </p>
+        </div>
+      </motion.section>
+
+      <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <div className="mx-auto max-w-7xl space-y-12">
+          <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#0B0F2E,#12193d_55%,#1b2459)] px-6 py-8 shadow-[0_30px_90px_rgba(11,15,46,0.18)] sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FFC900]">Free Community</div>
+              <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Join 12,000+ Students in Our Community</h2>
+              <p className="mt-4 text-base leading-8 text-white">Get college updates, cutoff alerts, mistakes to avoid, and real senior Q&A — all in our exclusive WhatsApp group.</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {freeGroupBullets.map((bullet) => (
+                  <span key={bullet} className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white">
+                    ✓ {bullet}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="mt-8 lg:mt-0">
+              <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-6 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]">
+                Join Free Group
+              </a>
             </div>
           </div>
-          <div className="mt-8 lg:mt-0">
-            <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-6 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]">
-              Join Free Group
-            </a>
-          </div>
+
+          <motion.div whileHover={{ y: -8 }} className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:p-12">
+            <h3 className="text-2xl font-bold text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              <div>
+                <div className="text-3xl font-black text-[#FF6B2B]">100%</div>
+                <p className="mt-2 text-sm font-semibold text-slate-600">Honest Feedback</p>
+                <p className="mt-1 text-xs text-slate-500">No sugar-coating. Real insights from real seniors.</p>
+              </div>
+              <div>
+                <div className="text-3xl font-black text-[#FF6B2B]">Data-Backed</div>
+                <p className="mt-2 text-sm font-semibold text-slate-600">Placement Truth</p>
+                <p className="mt-1 text-xs text-slate-500">College outcomes verified from 100+ colleges.</p>
+              </div>
+              <div>
+                <div className="text-3xl font-black text-[#FF6B2B]">Personalized</div>
+                <p className="mt-2 text-sm font-semibold text-slate-600">For Your Kid</p>
+                <p className="mt-1 text-xs text-slate-500">Not generic advice. Your situation matters.</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </motion.section>
+      </motion.section>
+    </>
   );
 }
 
@@ -212,6 +247,9 @@ export default function LaunchpadPage() {
   return (
     <main>
       <Hero />
+      <DecisionEngine />
+      <RegretSection />
+      <AtyantFramework />
       <PainSection />
       <SolutionSection />
       <PricingSection />
