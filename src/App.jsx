@@ -10,7 +10,7 @@ import LaunchpadPage from './pages/LaunchpadPage';
 import CollegePage from './pages/CollegePage';
 import FinalYearPage from './pages/FinalYearPage';
 import WorkingProPage from './pages/WorkingProPage';
-import React from 'react';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 
 export default function App() {
   const [activeTab, setActiveTab] = React.useState('after12th');
