@@ -14,29 +14,29 @@ export default function Hero() {
             <Sparkles className="h-4 w-4 text-[#FF6B2B]" />
             Decision Clarity Platform for Students
           </div>
-          <h1 className="w-full text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="w-full text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-6xl">
             Confused After 12th? Don’t Risk a Wrong 4-Year Decision.
           </h1>
-          <p className="mt-6 mx-auto w-full max-w-4xl text-base leading-8 text-white/72 sm:text-lg">
+          <p className="mt-4 sm:mt-6 mx-auto w-full max-w-4xl text-sm sm:text-base leading-7 sm:leading-8 text-white/72 lg:text-lg px-2">
             Most students choose blindly. We help you choose right — avoid wrong decisions, reduce regret, and get a clear next step.
           </p>
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <div className="mt-6 sm:mt-8 flex flex-col items-center gap-3 sm:gap-4 sm:flex-row sm:justify-center px-2">
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('openLeadModal'))}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-[#FF6B2B] to-[#ff8a57] px-6 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:opacity-95"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-br from-[#FF6B2B] to-[#ff8a57] px-6 py-3 sm:py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:opacity-95"
             >
               Get Clarity Now
             </button>
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-4 text-sm font-semibold text-white backdrop-blur transition hover:scale-[1.03] hover:bg-[#FF6B2B]/12 hover:text-white"
+              className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 sm:py-4 text-sm font-semibold text-white backdrop-blur transition hover:scale-[1.03] hover:bg-[#FF6B2B]/12 hover:text-white"
             >
               See Plans
             </a>
           </div>
-          <div className="mt-10 grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3 sm:mx-auto">
+          <div className="mt-8 sm:mt-10 grid w-full max-w-4xl grid-cols-1 gap-2 sm:gap-3 sm:grid-cols-3 sm:mx-auto px-2">
             {heroTrustBadges.map((badge) => (
-              <div key={badge} className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 text-sm font-semibold text-white/82 shadow-lg backdrop-blur">
+              <div key={badge} className="rounded-2xl border border-white/10 bg-white/6 px-3 sm:px-4 py-3 sm:py-4 text-xs sm:text-sm font-semibold text-white/82 shadow-lg backdrop-blur">
                 {badge}
               </div>
             ))}

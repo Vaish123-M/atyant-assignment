@@ -59,17 +59,17 @@ export default function RegretSection() {
       className="bg-[#0B0F2E] px-4 py-20 text-white sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center px-2">
           <div className="flex items-center justify-center gap-2">
-            <AlertCircle className="h-6 w-6 text-[#FF6B2B]" />
-            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">
+            <AlertCircle className="h-5 w-5 sm:h-6 sm:w-6 text-[#FF6B2B]" />
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">
               Real Stories
             </span>
           </div>
-          <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
+          <h2 className="mt-4 text-2xl sm:text-3xl font-black tracking-tight lg:text-4xl">
             Students Like You Made These Mistakes
           </h2>
-          <p className="mt-4 text-base leading-8 text-white/70">
+          <p className="mt-4 text-sm sm:text-base leading-7 sm:leading-8 text-white/70">
             But they don't have to be your mistakes. Learn from thousands who've been through this.
           </p>
         </div>
@@ -100,12 +100,12 @@ export default function RegretSection() {
 
         <motion.div
           variants={itemVariants}
-          className="mt-12 rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/5 to-white/10 p-8 text-center backdrop-blur-xl"
+          className="mt-12 rounded-[2rem] border border-white/10 bg-gradient-to-r from-white/5 to-white/10 p-4 sm:p-8 text-center backdrop-blur-xl"
         >
-          <p className="text-base text-white/80">
+          <p className="text-xs sm:text-sm md:text-base text-white/80">
             The difference? <span className="font-bold text-white">Real senior Q&A + Data-driven insights</span>
           </p>
-          <p className="mt-2 text-sm text-white/60">
+          <p className="mt-2 text-xs sm:text-sm text-white/60">
             12,000+ students already trusted Atyant to avoid these mistakes
           </p>
         </motion.div>

@@ -31,13 +31,13 @@ export default function WhatNobody() {
           <p className="mt-3 text-sm text-slate-600">Little truths that change the way you pick a college or branch.</p>
         </div>
 
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="mt-8 grid gap-4 md:grid-cols-4">
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it) => (
-            <motion.div key={it.title} variants={card} whileHover={{ y: -8, scale: 1.02 }} className={`rounded-2xl p-5 shadow-lg border border-white/10 bg-gradient-to-br ${it.color} text-[#0B0F2E]`}>
+            <motion.div key={it.title} variants={card} whileHover={{ y: -8, scale: 1.02 }} className={`rounded-2xl p-4 sm:p-5 shadow-lg border border-white/10 bg-gradient-to-br ${it.color} text-[#0B0F2E]`}>
               <div className="flex items-start gap-3">
-                <div className="mt-1 text-2xl">{it.icon}</div>
-                <div>
-                  <div className="text-sm font-semibold">{it.title}</div>
+                <div className="mt-1 text-xl sm:text-2xl flex-shrink-0">{it.icon}</div>
+                <div className="min-w-0">
+                  <div className="text-xs sm:text-sm font-semibold">{it.title}</div>
                   <div className="mt-2 text-xs text-slate-700">Short, actionable insight to help you think differently about choices.</div>
                 </div>
               </div>

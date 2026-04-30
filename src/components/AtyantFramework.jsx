@@ -21,9 +21,9 @@ export default function AtyantFramework() {
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-br from-[#071032] to-[#0B122B] text-white">
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold">Atyant Decision System™</h2>
-          <p className="mt-2 text-sm text-white/70">A repeatable 4-step approach to make the right 4-year decision.</p>
+        <div className=\"mx-auto max-w-3xl text-center px-2\">
+          <h2 className=\"text-2xl sm:text-3xl font-extrabold\">Atyant Decision System™</h2>
+          <p className=\"mt-2 text-xs sm:text-sm text-white/70\">A repeatable 4-step approach to make the right 4-year decision.</p>
         </div>
 
         <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6 }} className="mt-12 flex items-center justify-center">
