@@ -173,30 +173,42 @@ function FreeGroupSection() {
                 ))}
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 flex justify-center">
                 <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-full bg-gradient-to-br from-[#FF6B2B] to-[#ff8a57] px-6 py-3 text-sm font-semibold text-white shadow-2xl transition hover:scale-[1.03]">
                   Join Free Group
                 </a>
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="rounded-[1.6rem] border p-6 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
-              <h3 className="text-2xl font-black text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
-              <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                <motion.div whileHover={{ y: -6 }} className="rounded-lg p-4 text-center bg-gradient-to-br from-white to-white/70">
-                  <div className="text-3xl font-black text-[#FF6B2B]">100%</div>
-                  <p className="mt-2 text-sm font-semibold text-slate-700">Honest Feedback</p>
-                  <p className="mt-1 text-xs text-slate-500">No sugar-coating. Real insights from real seniors.</p>
+            <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="rounded-[1.6rem] border p-6 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-black text-[#0B0F2E]">🛡️ Why Parents Trust Atyant</h3>
+                <p className="mt-2 text-sm text-slate-600">Practical, evidence-backed guidance that parents can rely on.</p>
+              </div>
+              
+              <div className="mt-6 space-y-4 flex-1">
+                <motion.div whileHover={{ x: 6 }} className="flex items-start gap-4">
+                  <div className="mt-1 h-2 w-2 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-slate-700">100% Honest Feedback</p>
+                    <p className="text-xs text-slate-500 mt-1">No sugar-coating. Real insights from real seniors.</p>
+                  </div>
                 </motion.div>
-                <motion.div whileHover={{ y: -6 }} className="rounded-lg p-4 text-center bg-gradient-to-br from-white to-white/70">
-                  <div className="text-3xl font-black text-[#FF6B2B]">Data-Backed</div>
-                  <p className="mt-2 text-sm font-semibold text-slate-700">Placement Truth</p>
-                  <p className="mt-1 text-xs text-slate-500">College outcomes verified from 100+ colleges.</p>
+                
+                <motion.div whileHover={{ x: 6 }} className="flex items-start gap-4">
+                  <div className="mt-1 h-2 w-2 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-slate-700">Data-Backed Placement Truth</p>
+                    <p className="text-xs text-slate-500 mt-1">College outcomes verified from 100+ colleges.</p>
+                  </div>
                 </motion.div>
-                <motion.div whileHover={{ y: -6 }} className="rounded-lg p-4 text-center bg-gradient-to-br from-white to-white/70">
-                  <div className="text-3xl font-black text-[#FF6B2B]">Personalized</div>
-                  <p className="mt-2 text-sm font-semibold text-slate-700">For Your Kid</p>
-                  <p className="mt-1 text-xs text-slate-500">Not generic advice. Your situation matters.</p>
+                
+                <motion.div whileHover={{ x: 6 }} className="flex items-start gap-4">
+                  <div className="mt-1 h-2 w-2 rounded-full bg-[#FF6B2B] flex-shrink-0"></div>
+                  <div>
+                    <p className="font-semibold text-slate-700">Personalized For Your Kid</p>
+                    <p className="text-xs text-slate-500 mt-1">Not generic advice. Your situation matters.</p>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
