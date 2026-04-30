@@ -141,12 +141,12 @@ function FreeGroupSection() {
       <div className="mx-auto max-w-7xl">
         <div className="overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#0B0F2E,#12193d_55%,#1b2459)] px-6 py-8 shadow-[0_30px_90px_rgba(11,15,46,0.18)] sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FFB38E]">Free Community</div>
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FFC900]">Free Community</div>
             <h2 className="mt-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Join 12,000+ Students in Our Community</h2>
-            <p className="mt-4 text-base leading-8 text-white/72">Get college updates, cutoff alerts, mistakes to avoid, and real senior Q&A — all in our exclusive WhatsApp group.</p>
+            <p className="mt-4 text-base leading-8 text-white">Get college updates, cutoff alerts, mistakes to avoid, and real senior Q&A — all in our exclusive WhatsApp group.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {freeGroupBullets.map((bullet) => (
-                <span key={bullet} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/78">
+                <span key={bullet} className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white">
                   ✓ {bullet}
                 </span>
               ))}
