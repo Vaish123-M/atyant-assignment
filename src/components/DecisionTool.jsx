@@ -47,7 +47,7 @@ export default function DecisionTool() {
             <input value={confusion} onChange={(e) => setConfusion(e.target.value)} placeholder="Main confusion (optional)" className="rounded-md border px-3 py-2.5 text-sm" />
           </div>
 
-          <div className="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div className="mt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <button onClick={handleGet} className="rounded-full bg-[#FF6B2B] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#ff7a42] transition">Get My Best Option</button>
             <button onClick={() => window.dispatchEvent(new CustomEvent('openLeadModal'))} className="rounded-full border px-4 py-2.5 text-sm hover:bg-[#FF6B2B]/10 transition">Talk to a senior</button>
           </div>
