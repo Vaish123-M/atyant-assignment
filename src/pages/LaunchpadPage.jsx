@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
+import DecisionTool from '../components/DecisionTool';
+import WhatNobody from '../components/WhatNobody';
+import ComparisonSection from '../components/ComparisonSection';
+import ParentTrustSection from '../components/ParentTrustSection';
+import AtyantFramework from '../components/AtyantFramework';
+import TrustMetrics from '../components/TrustMetrics';
 import PricingCard from '../components/PricingCard';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
@@ -246,7 +252,13 @@ export default function LaunchpadPage() {
   return (
     <main>
       <Hero />
+      <DecisionTool />
+      <TrustMetrics />
       <DecisionEngine />
+      <WhatNobody />
+      <ComparisonSection />
+      <ParentTrustSection />
+      <AtyantFramework />
       <RegretSection />
       <PainSection />
       <SolutionSection />

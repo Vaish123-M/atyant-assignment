@@ -10,11 +10,20 @@ import LaunchpadPage from './pages/LaunchpadPage';
 import CollegePage from './pages/CollegePage';
 import FinalYearPage from './pages/FinalYearPage';
 import WorkingProPage from './pages/WorkingProPage';
+import React from 'react';
 
 export default function App() {
   const [activeTab, setActiveTab] = React.useState('after12th');
   const [showLeadModal, setShowLeadModal] = React.useState(false);
   const [showAdmin, setShowAdmin] = React.useState(false);
+
+  React.useEffect(() => {
+    function openHandler() {
+      setShowLeadModal(true);
+    }
+    window.addEventListener('openLeadModal', openHandler);
+    return () => window.removeEventListener('openLeadModal', openHandler);
+  }, []);
 
   const pageByTab = {
     after12th: <LaunchpadPage />,
@@ -27,6 +36,12 @@ export default function App() {
     <div className="min-h-screen overflow-x-hidden bg-white font-sans antialiased">
       <Navbar activeTab={activeTab} onTabChange={setActiveTab} onLeadClick={() => setShowLeadModal(true)} />
       <JourneySelector activeStage={activeTab} onStageChange={setActiveTab} />
+
+        <div className="fixed top-0 left-0 right-0 z-50">
+          <div className="mx-auto max-w-7xl">
+            <div className="hidden" />
+          </div>
+        </div>
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -44,6 +59,7 @@ export default function App() {
       <LeadCaptureModal open={showLeadModal} onClose={() => setShowLeadModal(false)} />
       <ChatWidget />
       <AdminPanel open={showAdmin} onClose={() => setShowAdmin(false)} />
+        <WhatsAppFloatingButton />
     </div>
   );
 }
