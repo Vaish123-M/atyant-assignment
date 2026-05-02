@@ -22,52 +22,56 @@ export default function CircleMeshBackground({
 }) {
   // Determine opacity based on intensity
   const opacityMap = {
-    subtle: 'opacity-5',
-    medium: 'opacity-8',
-    bold: 'opacity-12',
+    subtle: 0.08,
+    medium: 0.12,
+    bold: 0.18,
   };
 
-  // Determine background colors based on variant
-  const backgroundMap = {
-    dark: 'bg-gradient-to-br from-white via-white to-white',
-    light: 'bg-gradient-to-br from-slate-800 via-slate-800 to-slate-800',
-    tinted: 'bg-gradient-to-br from-[#8B5CF6] via-[#FF6B2B] to-[#8B5CF6]',
+  // Determine circle color based on variant
+  const circleColorMap = {
+    dark: 'rgba(255, 255, 255, 0.15)',
+    light: 'rgba(30, 41, 59, 0.15)',
+    tinted: 'rgba(139, 92, 246, 0.2)',
   };
+
+  const opacityValue = opacityMap[intensity];
+  const circleColor = circleColorMap[variant];
 
   return (
     <div className="relative w-full overflow-hidden">
       {/* Background container with mesh pattern */}
       <div
-        className={`absolute inset-0 w-full h-full ${opacityMap[intensity]} ${
+        className={`absolute inset-0 w-full h-full ${
           blur ? 'backdrop-blur-sm' : ''
         } ${animated ? 'animate-mesh-pulse' : ''}`}
         style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 50%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 60% 70%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 50% 20%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 80% 80%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 10% 10%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 90% 10%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 30% 80%, currentColor 1px, transparent 1px),
-            radial-gradient(circle at 70% 30%, currentColor 1px, transparent 1px)
+            radial-gradient(circle at 20% 50%, ${circleColor} 4px, transparent 4px),
+            radial-gradient(circle at 60% 70%, ${circleColor} 3px, transparent 3px),
+            radial-gradient(circle at 50% 20%, ${circleColor} 5px, transparent 5px),
+            radial-gradient(circle at 80% 80%, ${circleColor} 3px, transparent 3px),
+            radial-gradient(circle at 10% 10%, ${circleColor} 4px, transparent 4px),
+            radial-gradient(circle at 90% 10%, ${circleColor} 5px, transparent 5px),
+            radial-gradient(circle at 30% 80%, ${circleColor} 3px, transparent 3px),
+            radial-gradient(circle at 70% 30%, ${circleColor} 4px, transparent 4px)
           `,
           backgroundSize: '200px 200px, 300px 250px, 250px 200px, 280px 300px, 220px 280px, 240px 260px, 260px 240px, 270px 220px',
           backgroundPosition: '0 0, 40px 60px, 80px 10px, 20px 80px, 60px 30px, 10px 90px, 90px 20px, 30px 50px',
-          backgroundColor: variant === 'dark' ? '#ffffff' : variant === 'light' ? '#1e293b' : 'transparent',
+          opacity: opacityValue,
+          pointerEvents: 'none',
         }}
       />
 
-      {/* Enhanced mesh layer for depth (optional secondary pattern) */}
+      {/* Enhanced glow layer for depth */}
       <div
-        className="absolute inset-0 w-full h-full opacity-40"
+        className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 50% 50%, transparent 20%, currentColor 100%)
+            radial-gradient(circle at 50% 50%, transparent 30%, ${circleColor} 100%)
           `,
-          backgroundSize: '400px 400px',
+          backgroundSize: '600px 600px',
           backgroundPosition: '0 0',
-          backgroundColor: variant === 'tinted' ? 'transparent' : 'transparent',
+          opacity: opacityValue * 0.4,
           pointerEvents: 'none',
         }}
       />
@@ -82,11 +86,9 @@ export default function CircleMeshBackground({
         @keyframes mesh-pulse {
           0%, 100% {
             transform: translateY(0px);
-            opacity: ${opacityMap[intensity] === 'opacity-5' ? '0.05' : opacityMap[intensity] === 'opacity-8' ? '0.08' : '0.12'};
           }
           50% {
-            transform: translateY(10px);
-            opacity: ${opacityMap[intensity] === 'opacity-5' ? '0.07' : opacityMap[intensity] === 'opacity-8' ? '0.10' : '0.14'};
+            transform: translateY(8px);
           }
         }
 
