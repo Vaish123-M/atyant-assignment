@@ -130,12 +130,12 @@ function FeaturesSection() {
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <motion.div key={feature.title} whileHover={{ y: -8, scale: 1.01 }} className="group rounded-[1.7rem] border border-slate-200 bg-white p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)] transition">
+              <motion.div key={feature.title} whileHover={{ y: -8, scale: 1.01 }} className="group rounded-[1.7rem] border border-[#1E5BBF]/30 bg-[#1E5BBF] p-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)] transition">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FF6B2B]/10 text-[#FF6B2B] transition group-hover:bg-[#FF6B2B] group-hover:text-white">
                   <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-[#0B0F2E]">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{feature.description}</p>
+                <h3 className="mt-6 text-xl font-bold text-white">{feature.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/80">{feature.description}</p>
               </motion.div>
             );
           })}
