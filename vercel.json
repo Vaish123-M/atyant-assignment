@@ -1,10 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "env": {
-    "VITE_BASE": "/launchpad/"
-  },
   "rewrites": [
+    {
+      "source": "/launchpad/assets/(.*)",
+      "destination": "/launchpad/assets/$1"
+    },
     {
       "source": "/launchpad/(.*)",
       "destination": "/launchpad/index.html"
