@@ -22,16 +22,16 @@ export default function CircleMeshBackground({
 }) {
   // Determine opacity based on intensity
   const opacityMap = {
-    subtle: 0.08,
-    medium: 0.12,
-    bold: 0.18,
+    subtle: 0.15,
+    medium: 0.25,
+    bold: 0.35,
   };
 
   // Determine circle color based on variant
   const circleColorMap = {
-    dark: 'rgba(255, 255, 255, 0.15)',
-    light: 'rgba(30, 41, 59, 0.15)',
-    tinted: 'rgba(139, 92, 246, 0.2)',
+    dark: 'rgba(255, 255, 255, 0.3)',
+    light: 'rgba(30, 41, 59, 0.3)',
+    tinted: 'rgba(139, 92, 246, 0.3)',
   };
 
   const opacityValue = opacityMap[intensity];
@@ -41,43 +41,31 @@ export default function CircleMeshBackground({
     <div className="relative w-full overflow-hidden">
       {/* Background container with mesh pattern */}
       <div
-        className={`absolute inset-0 w-full h-full ${
-          blur ? 'backdrop-blur-sm' : ''
-        } ${animated ? 'animate-mesh-pulse' : ''}`}
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 20% 50%, ${circleColor} 4px, transparent 4px),
-            radial-gradient(circle at 60% 70%, ${circleColor} 3px, transparent 3px),
-            radial-gradient(circle at 50% 20%, ${circleColor} 5px, transparent 5px),
-            radial-gradient(circle at 80% 80%, ${circleColor} 3px, transparent 3px),
-            radial-gradient(circle at 10% 10%, ${circleColor} 4px, transparent 4px),
-            radial-gradient(circle at 90% 10%, ${circleColor} 5px, transparent 5px),
-            radial-gradient(circle at 30% 80%, ${circleColor} 3px, transparent 3px),
-            radial-gradient(circle at 70% 30%, ${circleColor} 4px, transparent 4px)
-          `,
-          backgroundSize: '200px 200px, 300px 250px, 250px 200px, 280px 300px, 220px 280px, 240px 260px, 260px 240px, 270px 220px',
-          backgroundPosition: '0 0, 40px 60px, 80px 10px, 20px 80px, 60px 30px, 10px 90px, 90px 20px, 30px 50px',
-          opacity: opacityValue,
-          pointerEvents: 'none',
-        }}
-      />
-
-      {/* Enhanced glow layer for depth */}
-      <div
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 50% 50%, transparent 30%, ${circleColor} 100%)
+            radial-gradient(circle at 20% 50%, ${circleColor} 5px, transparent 5px),
+            radial-gradient(circle at 60% 70%, ${circleColor} 4px, transparent 4px),
+            radial-gradient(circle at 50% 20%, ${circleColor} 6px, transparent 6px),
+            radial-gradient(circle at 80% 80%, ${circleColor} 4px, transparent 4px),
+            radial-gradient(circle at 10% 10%, ${circleColor} 5px, transparent 5px),
+            radial-gradient(circle at 90% 10%, ${circleColor} 6px, transparent 6px),
+            radial-gradient(circle at 30% 80%, ${circleColor} 4px, transparent 4px),
+            radial-gradient(circle at 70% 30%, ${circleColor} 5px, transparent 5px)
           `,
-          backgroundSize: '600px 600px',
-          backgroundPosition: '0 0',
-          opacity: opacityValue * 0.4,
+          backgroundSize: '200px 200px, 300px 250px, 250px 200px, 280px 300px, 220px 280px, 240px 260px, 260px 240px, 270px 220px',
+          backgroundPosition: '0 0, 40px 60px, 80px 10px, 20px 80px, 60px 30px, 10px 90px, 90px 20px, 30px 50px',
+          zIndex: 1,
           pointerEvents: 'none',
+          opacity: opacityValue,
         }}
       />
 
-      {/* Content layer */}
-      <div className="relative z-10 w-full">
+      {/* Content layer positioned on top */}
+      <div 
+        className="relative w-full"
+        style={{ zIndex: 2 }}
+      >
         {children}
       </div>
 
@@ -99,7 +87,7 @@ export default function CircleMeshBackground({
         }
 
         ${animated ? `
-          .animate-mesh-pulse {
+          div[style*="z-index: 1"] {
             animation: mesh-pulse 20s ease-in-out infinite;
           }
         ` : ''}
