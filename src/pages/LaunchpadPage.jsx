@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
-import CircleMeshBackground from '../components/CircleMeshBackground';
+import ParticleClusterBackground from '../components/ParticleClusterBackground';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
 import DecisionTool from '../components/DecisionTool';
@@ -248,8 +248,9 @@ function FAQSection() {
 
 function FinalCTA() {
   return (
-    <CircleMeshBackground variant="dark" intensity="medium" animated blur>
-      <section id="contact" className="bg-[#0B0F2E] px-4 py-20 text-white sm:px-6 lg:px-8">
+    <div className="relative w-full">
+      <ParticleClusterBackground particleCount={18} variant="dark" intensity="medium" />
+      <section id="contact" className="relative bg-[#0B0F2E] px-4 py-20 text-white sm:px-6 lg:px-8 z-10">
         <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,107,43,0.16),rgba(255,255,255,0.04))] p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,0.35)] sm:p-12">
           <h2 className="text-3xl font-black tracking-tight sm:text-5xl">One Wrong Decision Costs 4 Years.</h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/74 sm:text-lg">One right decision changes everything. Get clarity on college, branch, and your future before you commit.</p>
@@ -263,7 +264,7 @@ function FinalCTA() {
           </div>
         </div>
       </section>
-    </CircleMeshBackground>
+    </div>
   );
 }
 

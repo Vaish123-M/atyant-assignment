@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { heroTrustBadges } from '../data/siteContent';
-import CircleMeshBackground from './CircleMeshBackground';
+import ParticleClusterBackground from './ParticleClusterBackground';
 
 const journeyTabs = [
   { id: 'after12th', label: 'After 12th 🔥' },
@@ -13,8 +13,9 @@ const journeyTabs = [
 
 export default function Hero({ activeTab, onTabChange }) {
   return (
-    <CircleMeshBackground variant="dark" intensity="subtle" animated blur>
-      <section id="top" className="relative overflow-hidden bg-[#0B0F2E] text-white">
+    <div className="relative w-full">
+      <ParticleClusterBackground particleCount={20} variant="dark" intensity="subtle" />
+      <section id="top" className="relative overflow-hidden bg-[#0B0F2E] text-white z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,107,43,0.24),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(63,94,251,0.16),_transparent_30%)]" />
         <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FF6B2B]/20 blur-3xl" />
         <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-1 lg:items-center lg:px-8 lg:py-24">
@@ -70,6 +71,6 @@ export default function Hero({ activeTab, onTabChange }) {
         {/* Decision roadmap and student profile removed as requested */}
         </div>
       </section>
-    </CircleMeshBackground>
+    </div>
   );
 }
