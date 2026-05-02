@@ -24,13 +24,14 @@ export default function App() {
     return () => window.removeEventListener('openLeadModal', openHandler);
   }, []);
 
-  // Set canonical URL for SEO
+  // Set canonical URL for SEO (served from root, will be under /launchpad/ when proxied)
   React.useEffect(() => {
     const baseUrl = 'https://www.atyant.in';
-    const path = window.location.pathname;
-    const canonicalUrl = path === '/launchpad/' || path === '/launchpad' 
-      ? `${baseUrl}/launchpad/` 
-      : `${baseUrl}${path}`;
+    const isProduction = window.location.host !== 'localhost:5173' && window.location.host !== 'localhost:5174';
+    
+    // In production (proxied), URLs are under /launchpad/; in dev/Vercel preview, they're at root
+    const path = isProduction ? `/launchpad${window.location.pathname}` : window.location.pathname;
+    const canonicalUrl = `${baseUrl}${path === '/launchpad/' ? '/launchpad/' : path}`;
     
     let link = document.querySelector("link[rel='canonical']");
     if (!link) {

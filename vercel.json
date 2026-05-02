@@ -3,12 +3,8 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/launchpad/assets/(.*)",
-      "destination": "/launchpad/assets/$1"
-    },
-    {
-      "source": "/launchpad/(.*)",
-      "destination": "/launchpad/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
