@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import CircleMeshBackground from '../components/CircleMeshBackground';
 import DecisionEngine from '../components/DecisionEngine';
 import RegretSection from '../components/RegretSection';
 import DecisionTool from '../components/DecisionTool';
@@ -247,20 +248,22 @@ function FAQSection() {
 
 function FinalCTA() {
   return (
-    <section id="contact" className="bg-[#0B0F2E] px-4 py-20 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,107,43,0.16),rgba(255,255,255,0.04))] p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,0.35)] sm:p-12">
-        <h2 className="text-3xl font-black tracking-tight sm:text-5xl">One Wrong Decision Costs 4 Years.</h2>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/74 sm:text-lg">One right decision changes everything. Get clarity on college, branch, and your future before you commit.</p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-8 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]">
-            Get Clarity Now
-          </a>
-          <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition hover:scale-[1.03] hover:bg-[#FF6B2B]/12 hover:text-white">
-            Read FAQ
-          </a>
+    <CircleMeshBackground variant="dark" intensity="medium" animated blur>
+      <section id="contact" className="bg-[#0B0F2E] px-4 py-20 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,107,43,0.16),rgba(255,255,255,0.04))] p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,0.35)] sm:p-12">
+          <h2 className="text-3xl font-black tracking-tight sm:text-5xl">One Wrong Decision Costs 4 Years.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/74 sm:text-lg">One right decision changes everything. Get clarity on college, branch, and your future before you commit.</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-8 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]">
+              Get Clarity Now
+            </a>
+            <a href="#faq" className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white backdrop-blur transition hover:scale-[1.03] hover:bg-[#FF6B2B]/12 hover:text-white">
+              Read FAQ
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </CircleMeshBackground>
   );
 }
 

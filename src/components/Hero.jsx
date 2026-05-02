@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import { heroTrustBadges } from '../data/siteContent';
+import CircleMeshBackground from './CircleMeshBackground';
 
 const journeyTabs = [
   { id: 'after12th', label: 'After 12th 🔥' },
@@ -12,10 +13,11 @@ const journeyTabs = [
 
 export default function Hero({ activeTab, onTabChange }) {
   return (
-    <section id="top" className="relative overflow-hidden bg-[#0B0F2E] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,107,43,0.24),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(63,94,251,0.16),_transparent_30%)]" />
-      <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FF6B2B]/20 blur-3xl" />
-      <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-1 lg:items-center lg:px-8 lg:py-24">
+    <CircleMeshBackground variant="dark" intensity="subtle" animated blur>
+      <section id="top" className="relative overflow-hidden bg-[#0B0F2E] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,107,43,0.24),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(63,94,251,0.16),_transparent_30%)]" />
+        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FF6B2B]/20 blur-3xl" />
+        <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-1 lg:items-center lg:px-8 lg:py-24">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="w-full text-center">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2">
             {journeyTabs.map((tab) => (
@@ -66,7 +68,8 @@ export default function Hero({ activeTab, onTabChange }) {
         </motion.div>
 
         {/* Decision roadmap and student profile removed as requested */}
-      </div>
-    </section>
+        </div>
+      </section>
+    </CircleMeshBackground>
   );
 }
