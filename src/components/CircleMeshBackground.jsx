@@ -29,7 +29,6 @@ export default function CircleMeshBackground({
 
   // Determine circle color based on variant
   const circleColorMap = {
-    dark: 'rgba(255, 255, 255, 0.3)',
     light: 'rgba(30, 41, 59, 0.3)',
     tinted: 'rgba(139, 92, 246, 0.3)',
   };
