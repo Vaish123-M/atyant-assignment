@@ -1,94 +1,100 @@
 import React from 'react';
 
-/**
- * CircleMeshBackground Component
- * 
- * A reusable, performant background with repeating circular mesh patterns.
- * Uses CSS radial-gradient for premium, non-distracting effect.
- * 
- * Props:
- * - children: content to render on top
- * - variant: 'dark' (light circles on dark), 'light' (dark circles on light), 'tinted' (colored)
- * - intensity: 'subtle' (5%), 'medium' (8%), 'bold' (12%)
- * - animated: boolean - adds slow animation
- * - blur: boolean - adds subtle blur effect
- */
 export default function CircleMeshBackground({
   children,
   variant = 'dark',
   intensity = 'subtle',
   animated = true,
-  blur = true,
 }) {
-  // Determine opacity based on intensity
   const opacityMap = {
-    subtle: 0.15,
-    medium: 0.25,
-    bold: 0.35,
+    subtle: 0.5,
+    medium: 0.7,
+    bold: 0.9,
   };
 
-  // Determine circle color based on variant
-  const circleColorMap = {
-    light: 'rgba(30, 41, 59, 0.3)',
-    tinted: 'rgba(139, 92, 246, 0.3)',
-  };
-
+  const circleColor = variant === 'dark' ? '#FFFFFF' : '#1E293B';
   const opacityValue = opacityMap[intensity];
-  const circleColor = circleColorMap[variant];
+
+  // Circle positions and sizes  
+  const circles = [
+    { x: '20%', y: '50%', r: 18, delay: 0 },
+    { x: '60%', y: '70%', r: 15, delay: 0.2 },
+    { x: '50%', y: '20%', r: 22, delay: 0.4 },
+    { x: '80%', y: '80%', r: 15, delay: 0.1 },
+    { x: '10%', y: '10%', r: 18, delay: 0.3 },
+    { x: '90%', y: '10%', r: 22, delay: 0.2 },
+    { x: '30%', y: '80%', r: 15, delay: 0.5 },
+    { x: '70%', y: '30%', r: 18, delay: 0.1 },
+  ];
 
   return (
-    <div className="relative w-full overflow-hidden">
-      {/* Background container with mesh pattern */}
-      <div
-        className="absolute inset-0 w-full h-full"
+    <div className="relative w-full">
+      {/* SVG overlay with circles */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
         style={{
-          backgroundImage: `
-            radial-gradient(circle at 20% 50%, ${circleColor} 5px, transparent 5px),
-            radial-gradient(circle at 60% 70%, ${circleColor} 4px, transparent 4px),
-            radial-gradient(circle at 50% 20%, ${circleColor} 6px, transparent 6px),
-            radial-gradient(circle at 80% 80%, ${circleColor} 4px, transparent 4px),
-            radial-gradient(circle at 10% 10%, ${circleColor} 5px, transparent 5px),
-            radial-gradient(circle at 90% 10%, ${circleColor} 6px, transparent 6px),
-            radial-gradient(circle at 30% 80%, ${circleColor} 4px, transparent 4px),
-            radial-gradient(circle at 70% 30%, ${circleColor} 5px, transparent 5px)
-          `,
-          backgroundSize: '200px 200px, 300px 250px, 250px 200px, 280px 300px, 220px 280px, 240px 260px, 260px 240px, 270px 220px',
-          backgroundPosition: '0 0, 40px 60px, 80px 10px, 20px 80px, 60px 30px, 10px 90px, 90px 20px, 30px 50px',
-          zIndex: 1,
-          pointerEvents: 'none',
           opacity: opacityValue,
+          animation: animated ? 'circle-pulse 20s ease-in-out infinite' : 'none',
+          top: 0,
+          left: 0,
         }}
-      />
-
-      {/* Content layer positioned on top */}
-        className="relative w-full"
-        style={{ zIndex: 2 }}
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
       >
+        <defs>
+          <filter id="circle-blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0.3" />
+          </filter>
+        </defs>
+        {circles.map((circle, idx) => (
+          <circle
+            key={idx}
+            cx={circle.x}
+            cy={circle.y}
+            r={circle.r / 100}
+            fill={circleColor}
+            opacity="0.7"
+            filter="url(#circle-blur)"
+            style={{
+              animation: animated ? `circle-float ${20 + idx * 2}s ease-in-out infinite` : 'none',
+              animationDelay: `${circle.delay}s`,
+            }}
+          />
+        ))}
+      </svg>
+
+      {/* Content */}
+      <div className="relative">
         {children}
       </div>
 
-      {/* CSS for animation */}
       <style jsx>{`
-        @keyframes mesh-pulse {
+        @keyframes circle-pulse {
+          0%, 100% {
+            opacity: ${opacityValue};
+          }
+          50% {
+            opacity: ${opacityValue * 0.8};
+          }
+        }
+
+        @keyframes circle-float {
           0%, 100% {
             transform: translateY(0px);
           }
           50% {
-            transform: translateY(8px);
+            transform: translateY(-15px);
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .animate-mesh-pulse {
-            animation: none;
+          svg {
+            animation: none !important;
+          }
+          circle {
+            animation: none !important;
           }
         }
-
-        ${animated ? `
-          div[style*="z-index: 1"] {
-            animation: mesh-pulse 20s ease-in-out infinite;
-          }
-        ` : ''}
       `}</style>
     </div>
   );
