@@ -61,7 +61,6 @@ export default function CircleMeshBackground({
       />
 
       {/* Content layer positioned on top */}
-      <div 
         className="relative w-full"
         style={{ zIndex: 2 }}
       >
