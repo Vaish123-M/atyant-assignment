@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /launchpad/
+
+# Disallow robots from crawling certain paths (if any)
+Disallow: /admin/
+
+# Sitemap reference
+Sitemap: https://www.atyant.in/sitemap.xml
+Sitemap: https://www.atyant.in/sitemap-launchpad.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1

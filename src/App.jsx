@@ -24,6 +24,23 @@ export default function App() {
     return () => window.removeEventListener('openLeadModal', openHandler);
   }, []);
 
+  // Set canonical URL for SEO
+  React.useEffect(() => {
+    const baseUrl = 'https://www.atyant.in';
+    const path = window.location.pathname;
+    const canonicalUrl = path === '/launchpad/' || path === '/launchpad' 
+      ? `${baseUrl}/launchpad/` 
+      : `${baseUrl}${path}`;
+    
+    let link = document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = canonicalUrl;
+  }, []);
+
   const pageByTab = {
     after12th: <LaunchpadPage activeTab={activeTab} onTabChange={setActiveTab} />,
     college: <CollegePage activeTab={activeTab} onTabChange={setActiveTab} />,
