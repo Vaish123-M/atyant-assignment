@@ -264,7 +264,6 @@ function FinalCTA() {
           </div>
         </div>
       </section>
-    </div
     </div>
   );
 }
