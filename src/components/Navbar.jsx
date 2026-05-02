@@ -18,7 +18,7 @@ export default function Navbar({ onLeadClick }) {
 
         <div className="flex items-center gap-3">
           <a href="https://www.atyant.in/login" className="text-sm text-white/80 hover:text-white transition">Login</a>
-          <a href="https://www.atyant.in/signup" className="hidden sm:inline-flex items-center rounded-full bg-[#FF6B2B] px-3 py-1.5 text-sm font-semibold text-white hover:opacity-95 transition">Sign Up</a>
+          <a href="https://www.atyant.in/signup" className="inline-flex items-center rounded-full bg-[#FF6B2B] px-3 py-1.5 text-xs sm:text-sm font-semibold text-white hover:opacity-95 transition">Sign Up</a>
         </div>
       </div>
     </header>
