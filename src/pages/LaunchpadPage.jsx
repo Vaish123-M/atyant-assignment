@@ -5,14 +5,19 @@ import ParticleClusterBackground from '../components/ParticleClusterBackground';
 import RegretSection from '../components/RegretSection';
 import WhatNobody from '../components/WhatNobody';
 import DecisionEngine from '../components/DecisionEngine';
+import AdmissionProgramsSection from '../components/AdmissionProgramsSection';
 import ComparisonSection from '../components/ComparisonSection';
 import AtyantFramework from '../components/AtyantFramework';
-import TrustMetrics from '../components/TrustMetrics';
+import GamifiedBentoSection from '../components/GamifiedBentoSection';
 import PricingCard from '../components/PricingCard';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import {
-  faqItems,
+  faqCategories,
   freeGroupBullets,
   howItWorksSteps,
   pillars,
@@ -30,7 +35,8 @@ function HowItWorksSection() {
   return (
     <motion.section
       id="how-it-works"
-      className="relative overflow-hidden bg-[#F8FAFC] px-4 py-24 sm:px-6 lg:px-8"
+      className="relative bg-[#F8FAFC] px-4 py-24 sm:px-6 lg:px-8"
+      style={{ overflow: 'hidden' }}
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -238,7 +244,7 @@ function HowItWorksSection() {
               <div className="mt-8 flex justify-center">
 
                 <a
-                  href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t"
+                  href="https://chat.whatsapp.com/EnpaX25ybPU07nC3mDe0Z5"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -371,10 +377,25 @@ function StoriesSection() {
           <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">Success Stories</div>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0B0F2E] sm:text-4xl">Students who found clarity.</h2>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.name} {...testimonial} />
-          ))}
+        <div className="mt-10">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="pb-10"
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.name} className="h-auto">
+                <TestimonialCard {...testimonial} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </motion.section>
@@ -382,53 +403,95 @@ function StoriesSection() {
 }
 
 // ─── SECTION 6: Pricing — simple, clear, lowest barrier first ────────────────
-function PricingSection() {
+function PricingSection({ user }) {
   return (
     <motion.section
       id="pricing"
-      className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8"
+      className="bg-[#f6f7fb] px-4 py-12 sm:px-6 lg:px-8 overflow-x-hidden relative"
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.05 }}
     >
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-2xl">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">Pricing</div>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0B0F2E] sm:text-4xl">Pick the clarity you actually need.</h2>
-          <p className="mt-4 text-base leading-8 text-slate-600">Simple plans. Easy to understand. Built to help students and parents make the right decision faster.</p>
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-blue-500/10 to-transparent blur-[100px] pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl relative z-10">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+
+          {/* Stunning Integrated Early Bird Badge */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-3 rounded-full bg-white border border-slate-200 px-2 py-1.5 pr-5 mb-5 shadow-sm cursor-pointer"
+          >
+            <div className="flex items-center justify-center bg-[#0B0F2E] rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
+              <span className="mr-1.5 animate-pulse">🔥</span> Early Bird
+            </div>
+            <span className="text-xs font-bold text-slate-700">Join now for personalized college matching</span>
+          </motion.div>
+
+          <h2 className="text-4xl font-black tracking-tight text-[#0B0F2E] sm:text-5xl lg:text-6xl">
+            Pick the Clarity <br className="hidden sm:block" />
+            You Actually Need.
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-slate-500 max-w-xl mx-auto font-medium">
+            Plans are designed to be simple and transparent. Built to help students and parents make the right decision faster, without the confusion.
+          </p>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative z-20">
           {pricingPlans.map((plan) => (
             <PricingCard key={plan.title} {...plan} />
           ))}
         </div>
-      </div>
-    </motion.section>
-  );
-}
+        {user?.plan && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://wa.me/919579040183?text=Hi%2C%20I%20have%20already%20purchased%20a%20plan%20and%20would%20like%20to%20upgrade.%20Please%20guide%20me.",
+                  "_blank"
+               )
+              }
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Upgrade Plan
+            </button>
+          </div>
+        )}
+        {/* Why Choose Atyant Section */}
+        <div className="mt-20 max-w-4xl mx-auto bg-[#0B0F2E] rounded-[2.5rem] p-8 sm:p-12 text-white relative overflow-hidden shadow-2xl shadow-[#0B0F2E]/20 border border-white/5">
+          <div className="absolute right-0 top-0 w-72 h-72 bg-gradient-to-br from-orange-500/10 to-transparent blur-3xl" />
+          <div className="relative z-10">
+            <h3 className="text-2xl sm:text-3xl font-black text-center mb-10 tracking-tight uppercase">
+              ✨ Why Students Choose Atyant
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {[
+                'Talk to seniors with ranks like yours',
+                'Real JoSAA experience from recent seniors',
+                'Honest advice, not sugarcoating',
+                'Affordable guidance starting at just ₹99',
+                'Support from choice filling till allotment',
+                'No bots. Only real seniors.',
+              ].map((point) => (
+                <div key={point} className="flex items-center gap-4 bg-white/5 rounded-2xl p-4 border border-white/5 hover:border-white/10 transition-all hover:scale-[1.02]">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/25 text-emerald-400 text-sm font-black">
+                    ✓
+                  </div>
+                  <span className="text-sm sm:text-base font-bold text-white/90">
+                    {point}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-// ─── Early bird nudge (sits just above pricing) ───────────────────────────────
-function EarlyBirdBanner() {
-  return (
-    <motion.section
-      className="bg-[#f6f7fb] px-4 pt-10 sm:px-6 lg:px-8"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-3xl">
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="mx-auto rounded-full bg-gradient-to-r from-[#FFDBCB] via-[#FFE6D6] to-[#FFF4EF] px-5 py-3 shadow-lg flex items-center justify-center gap-3 border border-white/20"
-          >
-            <div className="animate-pulse text-xl">🔥</div>
-            <p className="text-center text-sm font-semibold text-[#FF6B2B] sm:text-base">
-              Early bird advantage: Join now for personalized college matching
-            </p>
-          </motion.div>
+        {/* Bottom trust line */}
+        <div className="mt-16 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">🔥 Limited Time Early Launch Offer</p>
+          <p className="mt-2 text-base font-semibold text-slate-600">Trusted Seniors. Real Insights. Better Decisions.</p>
         </div>
       </div>
     </motion.section>
@@ -437,30 +500,55 @@ function EarlyBirdBanner() {
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openId, setOpenId] = useState('0-0');
+
   return (
     <motion.section
       id="faq"
-      className="bg-white px-4 py-20 sm:px-6 lg:px-8"
+      className="relative bg-[#F8FAFC] px-4 pt-10 pb-24 sm:px-6 lg:px-8"
+      style={{ overflow: 'hidden' }}
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
-      <div className="mx-auto max-w-7xl">
-        <div className="w-full text-center">
-          <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#FF6B2B]">Questions?</div>
-          <h2 className="mt-3 text-3xl font-black tracking-tight text-[#0B0F2E] sm:text-4xl">Common questions from students and parents.</h2>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#000000_2px,transparent_2px),linear-gradient(to_bottom,#000000_2px,transparent_2px)] opacity-[0.05] bg-[size:40px_40px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="w-full flex flex-col items-center text-center">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-3 rounded-full bg-white border border-slate-200 px-2 py-1.5 pr-5 mb-5 shadow-sm"
+          >
+            <div className="flex items-center justify-center bg-[#FF6B2B] rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-md">
+              <span className="mr-1.5 animate-pulse">💡</span> Answers
+            </div>
+            <span className="text-xs font-bold text-slate-700">Clear Your Doubts</span>
+          </motion.div>
+          <h2 className="text-3xl font-black tracking-tight text-[#0B0F2E] sm:text-5xl">Frequently Asked Questions.</h2>
         </div>
-        <div className="mt-10 mx-auto grid gap-4 max-w-2xl">
-          {faqItems.map((item, index) => (
-            <FAQItem
-              key={item.question}
-              question={item.question}
-              answer={item.answer}
-              open={openIndex === index}
-              onToggle={() => setOpenIndex(openIndex === index ? -1 : index)}
-            />
+        <div className="mt-16 mx-auto max-w-3xl space-y-12">
+          {faqCategories.map((category, catIndex) => (
+            <div key={category.category}>
+              <h3 className="text-xl font-bold text-[#0B0F2E] mb-6 flex items-center gap-3">
+                <span className="w-2 h-6 bg-[#FF6B2B] rounded-full inline-block"></span>
+                {category.category}
+              </h3>
+              <div className="grid gap-4">
+                {category.items.map((item, itemIndex) => {
+                  const id = `${catIndex}-${itemIndex}`;
+                  return (
+                    <FAQItem
+                      key={item.question}
+                      question={item.question}
+                      answer={item.answer}
+                      open={openId === id}
+                      onToggle={() => setOpenId(openId === id ? null : id)}
+                    />
+                  );
+                })}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -481,7 +569,7 @@ function FinalCTA() {
           </p>
           <div className="mt-8 flex items-center justify-center">
             <a
-              href="https://chat.whatsapp.com/F3qcw7JZRIK5vbPgvUfaOA?mode=gi_t"
+              href="https://chat.whatsapp.com/EnpaX25ybPU07nC3mDe0Z5"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-[#FF6B2B] px-8 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#FF6B2B]/25 transition hover:scale-[1.03] hover:bg-[#ff7a42]"
@@ -496,40 +584,32 @@ function FinalCTA() {
 }
 
 // ─── PAGE ──────────────────────────────────────────────────────────────────────
-export default function LaunchpadPage({ activeTab, onTabChange }) {
+export default function LaunchpadPage({ activeTab, onTabChange, user }) {
   return (
     <main>
       {/* 1. Hero — speak their exact situation */}
       <Hero activeTab={activeTab} onTabChange={onTabChange} />
 
       {/* 2. The 3 biggest mistakes — emotional hook (fears they already have) */}
-      {/* RegretSection = real student regret stories (4 cards) */}
-      {/* WhatNobody = hidden truths about college decisions */}
       <RegretSection />
-      <WhatNobody />
-  {/* Blue fade */}
 
       {/* Bridge: seen the mistakes, now name your specific confusion */}
       <DecisionEngine />
 
-      {/* 3. How Atyant solves it — 3-step process, pillars, community */}
-      <HowItWorksSection />
+      {/* Admission Programs — three program cards with WhatsApp CTAs */}
+      <AdmissionProgramsSection />
 
-      {/* 4. Social proof — real numbers then real stories */}
-      <TrustMetrics />
+      {/* 5. Pricing — lowest barrier first, integrated early bird */}
+      <PricingSection user={user} />
+      <WhatNobody />
+
+      {/* 3. The Gamified Launchpad Bento Grid (Replaces 5 long sections) */}
+      <GamifiedBentoSection />
+
+      {/* 4. Success Stories*/}
       <StoriesSection />
 
-      {/* 5. Comparison table — branch vs college, real data */}
-      {/* ComparisonSection = side-by-side card comparison */}
-      {/* AtyantFramework = 4-step decision system reinforces methodology */}
-      <ComparisonSection />
-      <AtyantFramework />
-
-      {/* 6. Pricing — lowest barrier first, early bird nudge above */}
-      <EarlyBirdBanner />
-      <PricingSection />
-
-      {/* 7. Final CTA — one action only, FAQ clears last objections first */}
+      
       <FAQSection />
       <FinalCTA />
     </main>
