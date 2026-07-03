@@ -24,7 +24,8 @@ export default function FinalYearPage({ activeTab, onTabChange }) {
       <JourneyTabs activeTab={activeTab} onTabChange={onTabChange} />
       <motion.section
         id="top"
-        className="relative overflow-hidden bg-[#0B0F2E] text-white"
+        className="relative bg-[#0B0F2E] text-white"
+        style={{ overflow: 'hidden' }}
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -65,7 +66,7 @@ export default function FinalYearPage({ activeTab, onTabChange }) {
         </div>
       </motion.section>
 
-      <DecisionEngine />
+      {/* <DecisionEngine /> */}
       <RegretSection />
 
       <motion.section className="bg-[#f6f7fb] px-4 py-20 sm:px-6 lg:px-8" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
