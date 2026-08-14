@@ -5,8 +5,8 @@ const colors = {
   // Brand Colors
   primary: '#8B5CF6',      // Purple
   dark: '#0B0F2E',         // Dark navy
-  orange: '#FF6B2B',       // Accent orange
-  blue: '#0B72FF',         // Alternative blue
+  'brand-orange': '#FF6B2B', // Accent orange
+  'brand-blue': '#0B72FF',   // Alternative blue
   
   // Neutrals
   white: '#FFFFFF',
@@ -36,7 +36,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
       colors,
